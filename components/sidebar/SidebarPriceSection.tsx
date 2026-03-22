@@ -1,4 +1,4 @@
-import { formatNairaNum } from "./formatNaira";
+import { formatPriceInNaira } from "@/lib/productUtils";
 
 type SidebarPriceSectionProps = {
   priceMin: string;
@@ -27,7 +27,7 @@ export const SidebarPriceSection = ({
       <div className="rounded-xl border border-gray-200 bg-white p-4">
         <div className="flex gap-3">
           <div className="min-w-0 flex-1">
-            <p className="mb-1 text-xs text-gray-400">{formatNairaNum(labelMin)}</p>
+            <p className="mb-1 text-xs text-gray-400">{formatPriceInNaira(labelMin)}</p>
             <label className="sr-only" htmlFor="price-min">
               Minimum price
             </label>
@@ -43,7 +43,7 @@ export const SidebarPriceSection = ({
           </div>
 
           <div className="min-w-0 flex-1">
-            <p className="mb-1 text-xs text-gray-400">{formatNairaNum(labelMax)}</p>
+            <p className="mb-1 text-xs text-gray-400">{formatPriceInNaira(labelMax)}</p>
             <label className="sr-only" htmlFor="price-max">
               Maximum price
             </label>

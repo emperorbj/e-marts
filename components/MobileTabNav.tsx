@@ -12,11 +12,15 @@ import {
 type MobileTabNavProps = {
   mobileSearchOpen: boolean;
   onSearchPress: () => void;
+  onCartPress: () => void;
+  onNotificationsPress: () => void;
 };
 
 export const MobileTabNav = ({
   mobileSearchOpen,
   onSearchPress,
+  onCartPress,
+  onNotificationsPress,
 }: MobileTabNavProps) => {
   const pathname = usePathname();
   const homeActive = pathname === "/";
@@ -48,7 +52,12 @@ export const MobileTabNav = ({
           <span>Search</span>
         </button>
 
-        <button type="button" className={tabClass(false)} aria-label="Cart">
+        <button
+          type="button"
+          className={tabClass(false)}
+          aria-label="Cart"
+          onClick={onCartPress}
+        >
           <span className="relative inline-flex">
             <HiOutlineShoppingCart className="h-6 w-6" aria-hidden />
             <span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand px-0.5 text-[10px] font-semibold text-white">
@@ -58,7 +67,12 @@ export const MobileTabNav = ({
           <span>Cart</span>
         </button>
 
-        <button type="button" className={tabClass(false)} aria-label="Notifications">
+        <button
+          type="button"
+          className={tabClass(false)}
+          aria-label="Notifications"
+          onClick={onNotificationsPress}
+        >
           <HiOutlineBell className="h-6 w-6" aria-hidden />
           <span>Alerts</span>
         </button>
