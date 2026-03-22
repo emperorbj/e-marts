@@ -10,11 +10,11 @@ import type { Product } from "@/types/product";
 
 type SortOption = "low" | "high";
 
-const currentPrice = (p: Product) => {
-  if (p.sale_price > 0 && p.sale_price < p.price) {
-    return p.sale_price;
+const currentPrice = (price: Product) => {
+  if (price.sale_price > 0 && price.sale_price < price.price) {
+    return price.sale_price;
   }
-  return p.price;
+  return price.price;
 };
 
 const Home = () => {
