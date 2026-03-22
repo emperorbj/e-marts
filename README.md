@@ -13,6 +13,7 @@ A small **Next.js** storefront UI for browsing men’s clothing: filters, sortin
 ## Getting started
 
 ```bash
+cd e-marts
 yarn install
 yarn dev
 ```
